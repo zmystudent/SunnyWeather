@@ -10,11 +10,18 @@ import kotlin.coroutines.suspendCoroutine
 object SunnyWeatherNetwork {
     //private val placeService2 = ServiceCreator.create(PlaceService::class.java)
     private val placeService = ServiceCreator.create<PlaceService>()
+    private val weatherService = ServiceCreator.create<WeatherService>()
 
     /**
      * suspend: 让该函数变为挂起函数
      */
     suspend fun searchPlaces(query: String) = placeService.searchPlaces(query).await()
+
+    suspend fun getDailyWeather(lng: String, lat: String) =
+        weatherService.getDailyWeather(lng, lat).await()
+
+    suspend fun getRealtimeWeather(lng: String, lat: String) =
+        weatherService.getRealtimeWeather(lng, lat).await()
 
     /**
      * P471. suspendCoroutine函数的解释

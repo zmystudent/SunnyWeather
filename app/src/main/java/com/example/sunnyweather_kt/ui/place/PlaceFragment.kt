@@ -44,6 +44,7 @@ class PlaceFragment : Fragment() {
             }
         }
         viewModel.placeLiveData.observe(this, Observer { result ->
+            //这部分的代码是当placeLiveData数据发生变化的时候,回调的地方
             val places = result.getOrNull()
             if (places != null) {
                 recyclerView.visibility = View.VISIBLE

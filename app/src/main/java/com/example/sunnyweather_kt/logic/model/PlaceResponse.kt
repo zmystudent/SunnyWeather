@@ -2,6 +2,7 @@ package com.example.sunnyweather_kt.logic.model
 
 import com.google.gson.annotations.SerializedName
 
+//搜索天气返回的JSON数据解析结构
 data class PlaceResponse(val status: String, val places: List<Place>)
 
 data class Place(
