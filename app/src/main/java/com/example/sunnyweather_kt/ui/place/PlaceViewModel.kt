@@ -27,4 +27,10 @@ class PlaceViewModel : ViewModel() {
 
     //ViewModel的数据改变在Fragment中
     val placeList = ArrayList<Place>()
+
+    fun savePlace(place: Place) = Repository.savePlace(place)
+
+    fun getSavedPlace() = Repository.getSavedPlace()
+
+    fun isPlaceSaved() = Repository.isPlaceSaved()
 }
